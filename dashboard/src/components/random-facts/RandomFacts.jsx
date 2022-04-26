@@ -1,19 +1,22 @@
 import {useEffect, useState} from 'react';
-import { Paper } from '@mui/material';
+import { Paper, Stack, Typography } from '@mui/material';
 
 const RandomFacts = props => {
-  const [fact, setFact] = useState('');
+  const [fact, setFact] = useState({
+    text: "No facts yet!",
+    source: "No sources either."
+  });
 
   useEffect(() => {
 
     // returned object:
     //   {
-    //     id
-    //     text
-    //     source
-    //     source_url
-    //     language
-    //     permalink
+    //     id         --> for permalink
+    //     text       --> the fact
+    //     source     --> 3rd-party site name
+    //     source_url --> to 3rd-party site
+    //     language   --> use 'en' only
+    //     permalink  --> to random useless facts site
     //   }
     // fetch('https://uselessfacts.jsph.pl/random.json?language=en')
     //   .then(res => res.json())
@@ -23,9 +26,29 @@ const RandomFacts = props => {
   
   return (
     <Paper
-      sx={{ width: '25%'}}
-      elevation={4}>
-      {"This is some test text to make sure the formatting works fine. Lorem ipsum yadda yadda."}
+      sx={{
+        height: '300px',
+        width: '300px'
+      }}
+      elevation={4}
+    >
+      <Stack
+        direction="column"
+        justifyContent="space-between"
+        alignItems="flex-start"
+      >
+        <Typography>
+          {fact.text}
+        </Typography>
+        
+        <Typography>
+          {fact.source}
+        </Typography>
+
+        <Typography>
+          Random Useless Facts API
+        </Typography>
+      </Stack>
     </Paper>
   );
 };
