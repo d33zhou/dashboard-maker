@@ -1,6 +1,9 @@
 import {useState, useEffect} from 'react';
-import RandomFacts from './components/random-facts/RandomFacts';
+
 import { Box } from '@mui/material';
+
+import RandomFacts from './components/random-facts/RandomFacts';
+import NavBar from './components/navigation/NavBar';
 
 function App() {
   
@@ -10,12 +13,19 @@ function App() {
     <div className="App">
       
       <header>
-        Dashboard Builder
+        
+        <NavBar>
+          Dashboard Builder
+        </NavBar>
+
       </header>
 
       <main>
 
         <Box>
+          <RandomFacts />
+          <RandomFacts />
+          <RandomFacts />
           <RandomFacts />
         </Box>
 
