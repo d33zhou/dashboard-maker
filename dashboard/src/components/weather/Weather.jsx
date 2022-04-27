@@ -13,6 +13,7 @@ const Weather = props => {
       }}
       elevation={4}
     >
+      {/* Location Search */}
       <TextField
         sx={{
           width:'100%'
@@ -21,10 +22,26 @@ const Weather = props => {
         variant="filled"
       />
 
+      {/* Date/Time */}
       <Typography>
-        <Moment interval={1000}>
+        <Moment format="MMMM DD, YYYY">
           {current}
         </Moment>
+      </Typography>
+
+      {/* Temperature */}
+      <Typography>
+        15°C
+      </Typography>
+      
+      {/* Forecast */}
+      <Typography>
+        Sunny
+      </Typography>
+
+      {/* Location */}
+      <Typography>
+        Toronto, Ontario
       </Typography>
     </Paper>
   );
