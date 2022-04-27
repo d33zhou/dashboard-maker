@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import { Paper, Stack, Typography } from '@mui/material';
+import { Box, Divider, Paper, Stack, Typography } from '@mui/material';
 
 const RandomFacts = props => {
   const [fact, setFact] = useState({
@@ -20,7 +20,10 @@ const RandomFacts = props => {
     //   }
     // fetch('https://uselessfacts.jsph.pl/random.json?language=en')
     //   .then(res => res.json())
-    //   .then(result => setFact(result.text));
+    //   .then(result => setFact({
+    //     text: result.text,
+    //     source: result.source
+    //   }));
       
   }, []);
   
@@ -33,21 +36,41 @@ const RandomFacts = props => {
       elevation={4}
     >
       <Stack
+        sx={{
+          height: '100%',
+          width: '100%'
+        }}
         direction="column"
         justifyContent="space-between"
         alignItems="flex-start"
       >
-        <Typography>
-          {fact.text}
-        </Typography>
+        <Box>
+          <Typography
+            sx={{
+              mb: 1
+            }}
+          >
+            {fact.text}
+          </Typography>
+          
+          <Typography>
+            - {fact.source}
+          </Typography>
+        </Box>
         
-        <Typography>
-          {fact.source}
-        </Typography>
 
-        <Typography>
-          Random Useless Facts API
-        </Typography>
+        <Box>
+          <Divider />
+
+          <Typography
+            sx={{
+              fontSize: 10
+            }}
+          >
+            Random Useless Facts API
+          </Typography>
+        </Box>
+
       </Stack>
     </Paper>
   );

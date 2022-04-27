@@ -2,8 +2,9 @@ import {useState, useEffect} from 'react';
 
 import { Box, Grid } from '@mui/material';
 
-import RandomFacts from './components/random-facts/RandomFacts';
 import NavBar from './components/navigation/NavBar';
+import RandomFacts from './components/random-facts/RandomFacts';
+import Weather from './components/weather/Weather';
 
 function App() {
   
@@ -31,8 +32,13 @@ function App() {
           }}
         >
           <Grid item sm={3}>
+            <Weather />
+          </Grid>
+          
+          <Grid item sm={3}>
             <RandomFacts />
           </Grid>
+
           
           
   

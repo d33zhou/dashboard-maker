@@ -6,6 +6,10 @@ body {
   background-color: rgb(216, 216, 216);
   padding: 10px;
   padding-top: 50px;
+
+  background-image: url("https://coffee.alexflipnote.dev/wtmouQN7AfQ_coffee.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 code {
